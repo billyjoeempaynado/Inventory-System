@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+  
+</head>
+<body>
+ <!-- component -->
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
+<!-- component -->
+<div class="flex flex-wrap bg-gray-100 w-full h-screen">
+  
+  <div id="main" class="flex flex-col h-screen w-1/6 bg-white rounded p-3 shadow-lg">
+    <div class="p-4 flex items-center">
+      <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+      <span class="text-xl font-semibold">Inventory System</span>
+  </div>
+  <nav class="flex flex-col flex-grow bg-white">
+      <ul class="flex flex-col flex-grow">
+          <li class="mb-2">
+            <a href="/users/dashboard"  class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link>
+                  <span class="text-gray-600">
+                    <i class="fas fa-tachometer-alt mr-2"></i>
+                  </span>
+                  <span>Dashboard</span>
+              </a>
+          </li>
+          <li class="mb-2">
+              <a href="/users/products"  id="productsButton" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link>
+                  <span class="text-gray-600">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                  </span>
+                  <span>Products</span>
+              </a>
+          </li>
+          <li class="mb-2">
+              <a href="/users/suppliers" id="suppliersButton" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link>
+                  <span class="text-gray-600">
+                    <i class="fas fa-truck mr-2"></i> 
+                  </span>
+                  <span>Supplier</span>
+              </a>
+          </li>
+           <li class="mb-2">
+              <a href="/users/orders" id="ordersButton" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link>
+                  <span class="text-gray-600">
+                    <i class="fas fa-shopping-cart mr-2"></i>
+                  </span>
+                  <span>Orders</span>
+              </a>
+          </li>
+        <li class="mb-2">
+              <a href="/users/inventorylevel" id="inventoryLevelButton" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link> 
+                  <span class=" text-gray-600">
+                    <i class="fa-solid fa-chart-line"></i>
+                  </span>
+                  <span>Inventory Level</span>
+              </a>
+          </li>
+       <li class="mb-2">
+              <a href="/users/reports" id="reportsButton" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link>
+                  <span class="text-gray-600">
+                      <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                      </svg>
+                  </span>
+                  <span>Reports</span>
+              </a>
+          </li>
+          <li class="mb-2">
+            <a href="/users/logs" id="logsButton" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link>
+                <span class="text-gray-600">
+                    <i class="fa-solid fa-list"></i>
+                </span>
+                <span>Logs</span>
+            </a>
+        </li>
+          <li class="mt-60">
+              <a href="" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline" data-link>
+                  <span class="text-gray-600">
+                      <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                  </span>
+                  <span>Change password</span>
+              </a>
+          </li>
+          <li class="mt-auto">
+              <a href="/users/logout" class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
+                  <span class="text-gray-600">
+                      <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                      </svg>
+                  </span>
+                  <span>Logout</span>
+              </a>
+          </li>
+      </ul>
+     </nav> 
+  </div>
+
+  <div class="flex-1 p-8"> <!-- Added flex-1 to take up remaining space -->
+    <div id="content">
+                          
+    </div>
+</div>
+</div>
+
+<div id="paginationControls" class="pagination-controls"></div> <!-- Ensure this is included -->
+
+<!-- <button id="clearItemsButton">Clear Items Data</button>
+<button id="clearProductsButton">Clear Products Data</button>
+
+<script>
+    document.getElementById('clearItemsButton').addEventListener('click', () => {
+        localStorage.removeItem('inventoryItems');  // Clears only the 'items' key
+        alert('Items data has been cleared from local storage');
+    });
+
+    document.getElementById('clearProductsButton').addEventListener('click', () => {
+        localStorage.removeItem('products');  // Clears only the 'products' key
+        alert('Products data has been cleared from local storage');
+    });
+</script> -->
+
+  
+
+<script type="module" src="/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>

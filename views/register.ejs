@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory System</title>
+  <link rel="stylesheet" href="/output.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-sm w-full">
+        <div class="text-center mb-6">
+            <svg class="w-12 h-12 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2z"/><path d="M12 6v6h4"/></svg>
+            <h2 class="text-2xl font-semibold text-gray-800">Register</h2>
+        </div>
+        <ul id="registerErrorAlert" >
+          <% if(typeof errors != 'undefined') { %>
+            <% errors.forEach(error => { %>
+              <li class="flex items-start mb-2 bg-red-100 border border-red-400 text-red-700 px-2 py-1 rounded ">
+                <span><%= error.message %></span>
+              </li>
+            <% }) %>
+          <% } %>
+        </ul>
+        <form action="/users/register" method="POST">
+            <div class="mb-4">
+                <label class="block text-gray-600 mb-2" for="email">Enter name</label>
+                <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" id="name" type="name" name="name" placeholder="Enter name" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-600 mb-2" for="email">Enter email</label>
+                <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" id="email" type="email" name="email" placeholder="Enter email" required />
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-600 mb-2" for="password">Enter password</label>
+                <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" id="password" type="password" name="password" placeholder="Enter password" required />
+            </div>
+            <div class="mb-6">
+              <label class="block text-gray-600 mb-2" for="password">Confirm password</label>
+              <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" id="password2" type="password" name="password2" placeholder="Confirm password" required />
+          </div>
+            <input type="submit" value="register" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200"></input>
+        </form>
+        <p class="mt-4 text-center text-gray-600">Already have an account? <a class="text-blue-500 hover:underline" href="/users/login">Sign in</a></p>
+    </div>
+</div>
+
+<script type="module" src="/js/timeout.js"></script>
+</body>
+</html>
